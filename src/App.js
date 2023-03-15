@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Feedback from './Feedback';
-import Contact from './Contact';
-import Newsletter from './Newsletter';
 import './index.css';
 
 export default function App() {
