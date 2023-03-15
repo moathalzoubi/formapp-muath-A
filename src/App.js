@@ -24,7 +24,7 @@ export default function App() {
           width="75"
           alt=""
         />
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="username"
