@@ -1,5 +1,5 @@
 import React from 'react';
-import { getDatabase, ref, push, set } from 'firebase/database';
+import { database, ref, push, set,child } from 'firebase/database';
 import './index.css';
 
 export default function App() {
