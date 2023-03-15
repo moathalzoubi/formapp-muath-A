@@ -1,5 +1,5 @@
 import React from 'react';
-import { getDatabase, ref, push, set } from 'firebase/database';
+import { database, ref, push, child, update } from 'firebase/database';
 import './index.css';
 
 export default function App() {
@@ -38,7 +38,7 @@ export default function App() {
             placeholder="Password"
             onChange={(e) => setPassWord(e.target.value)}
           />
-          <input class="blue-btn" type="submit" onSubmit={handleSubmit} />
+          <input class="blue-btn" type="submit" />
         </form>
 
         <div className="orRow">
