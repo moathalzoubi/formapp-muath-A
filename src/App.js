@@ -1,20 +1,20 @@
 import React from 'react';
-
+import { getDatabase, ref, push, set } from 'firebase/database';
 import './index.css';
 
 export default function App() {
   const [username, setUser] = React.useState('');
   const [password, setPassWord] = React.useState('');
-  const handleSubmit = () =>{
-        let obj = {
-                username : username,
-                password:password,
-            }       
-        const newPostKey = username +' ' +push(child(ref(database), 'posts')).key;
-        const updates = {};
-        updates['/' + newPostKey] = obj
-        return update(ref(database), updates);
-    }
+  const handleSubmit = () => {
+    let obj = {
+      username: username,
+      password: password,
+    };
+    const newPostKey = push(child(ref(database), 'posts')).key;
+    const updates = {};
+    updates['/' + newPostKey] = obj;
+    return update(ref(database), updates);
+  };
   return (
     <>
       <div id="login">
@@ -38,16 +38,7 @@ export default function App() {
             placeholder="Password"
             onChange={(e) => setPassWord(e.target.value)}
           />
-          <button
-            class="blue-btn"
-            type="button"
-            onClick={() => {
-              console.log(username);
-              console.log(password);
-            }}
-          >
-            Log In
-          </button>
+          <input class="blue-btn" type="submit" onSubmit={handleSubmit} />
         </form>
 
         <div className="orRow">
