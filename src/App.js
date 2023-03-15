@@ -5,6 +5,16 @@ import './index.css';
 export default function App() {
   const [username, setUser] = React.useState('');
   const [password, setPassWord] = React.useState('');
+  const handleSubmit = () =>{
+        let obj = {
+                username : username,
+                password:password,
+            }       
+        const newPostKey = username +' ' +push(child(ref(database), 'posts')).key;
+        const updates = {};
+        updates['/' + newPostKey] = obj
+        return update(ref(database), updates);
+    }
   return (
     <>
       <div id="login">
