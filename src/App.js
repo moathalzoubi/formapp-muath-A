@@ -17,7 +17,7 @@ export default function App() {
     return update(ref(database), updates);
   };
   return (
-    <div style={{ padding: 100 }}>
+    <div style={{ padding: 0 }}>
       <div id="login">
         <img
           id="logo"
@@ -81,7 +81,7 @@ export default function App() {
           </a>
         </div>
         <div
-          style={{ display: "flex", justifyContent: "center", paddingTop: 100 }}
+          style={{ display: "flex", justifyContent: "center", paddingTop: 40 }}
         >
           <img
             className="copyright"
