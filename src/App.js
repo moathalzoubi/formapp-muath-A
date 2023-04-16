@@ -83,7 +83,11 @@ export default function App() {
         <div
           style={{ display: "flex", justifyContent: "center", paddingTop: 100 }}
         >
-          <p className="copyright">&copy; 2023 INSTAGRAM FROM FACEBOOK</p>
+          <img
+            className="copyright"
+            src="https://static.cdninstagram.com/rsrc.php/yb/r/SxCWlJznXoy.svg"
+            alt="meta"
+          />
         </div>
       </div>
     </div>
