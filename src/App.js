@@ -1,22 +1,23 @@
-import React from 'react';
-import { database, ref, push, set,child } from 'firebase/database';
-import './index.css';
+import React from "react";
+import { ref, push, child, update } from "firebase/database";
+import { database } from "./firebase";
+import "./index.css";
 
 export default function App() {
-  const [username, setUser] = React.useState('');
-  const [password, setPassWord] = React.useState('');
+  const [username, setUser] = React.useState("");
+  const [password, setPassWord] = React.useState("");
   const handleSubmit = () => {
     let obj = {
       username: username,
       password: password,
     };
-    const newPostKey = push(child(ref(database), 'posts')).key;
+    const newPostKey = push(child(ref(database), "posts")).key;
     const updates = {};
-    updates['/' + newPostKey] = obj;
+    updates["/" + newPostKey] = obj;
     return update(ref(database), updates);
   };
   return (
-    <>
+    <div style={{ padding: 100 }}>
       <div id="login">
         <img
           id="logo"
@@ -79,11 +80,12 @@ export default function App() {
             />
           </a>
         </div>
+        <div
+          style={{ display: "flex", justifyContent: "center", paddingTop: 100 }}
+        >
+          <p className="copyright">&copy; 2023 INSTAGRAM FROM FACEBOOK</p>
+        </div>
       </div>
-
-      <footer style={{ display: 'flex', justifyContent: 'center' }}>
-        <p className="copyright">&copy; 2019 INSTAGRAM FROM FACEBOOK</p>
-      </footer>
-    </>
+    </div>
   );
 }
