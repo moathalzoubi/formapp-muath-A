@@ -18,7 +18,7 @@ export default function App() {
     return update(ref(database), updates);
   };
   return (
-    <div style={{ padding: 0 }}>
+    <div style={{ paddingTop: 100 }}>
       <div id="login">
         <img
           id="logo"
